@@ -5,7 +5,7 @@ import { PictRunner } from '@takeyaqa/pict-wasm'
 
 // Create server instance
 const server = new McpServer({
-  name: 'pict-mcp',
+  name: 'PictMCP',
   description: 'Pairwise Independent Combinatorial Testings for MCP',
   version: '0.1.0',
   capabilities: {
@@ -52,7 +52,7 @@ server.tool(
 async function main() {
   const transport = new StdioServerTransport()
   await server.connect(transport)
-  console.error('Pict MCP Server running on stdio')
+  console.error('PictMCP Server running on stdio')
 }
 
 main().catch((error: unknown) => {
