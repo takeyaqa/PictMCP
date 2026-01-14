@@ -7,7 +7,7 @@ Pairwise Independent Combinatorial Testings for MCP
 > [!WARNING]
 > This project is currently under active development.
 > It is not yet stable and its API and features may change without notice.
-> 
+>
 > Use in production environments is **not recommended** at this time.
 
 ## Install
@@ -33,12 +33,10 @@ In your MCP client
 ```json
 {
   "mcpServers": {
-      "PictMCP": {
-          "command": "node",
-          "args": [
-            "/ABSOLUTE/PATH/TO/PARENT/FOLDER/PictMCP/dist/index.js"
-          ]
-      }
+    "PictMCP": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/PARENT/FOLDER/PictMCP/dist/index.js"]
+    }
   }
 }
 ```
