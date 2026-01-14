@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
-import { PictRunner } from './pict-runner.js'
+import { PictRunner } from '@takeyaqa/pict-wasm'
 
 // Create server instance
 const server = new McpServer({
@@ -22,7 +22,7 @@ server.tool(
     parameters: z
       .object({
         name: z.string(),
-        values: z.array(z.string()),
+        values: z.string(),
       })
       .array()
       .describe('Parameters for the test case generation'),

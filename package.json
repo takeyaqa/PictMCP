@@ -23,7 +23,7 @@
   "repository": "takeyaqa/pict-mcp",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
-    "@takeyaqa/pict-node": "3.7.4-fork.5",
+    "@takeyaqa/pict-wasm": "3.7.4-wasm.11",
     "zod": "^3.25.48"
   },
   "devDependencies": {
