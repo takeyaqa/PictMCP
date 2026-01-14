@@ -1,4 +1,4 @@
-# pict-mcp
+# PictMCP
 
 Pairwise Independent Combinatorial Testings for MCP
 
@@ -22,8 +22,8 @@ Pairwise Independent Combinatorial Testings for MCP
 In your terminal
 
 ```sh
-git clone https://github.com/takeyaqa/pict-mcp.git
-cd pict-mcp
+git clone https://github.com/takeyaqa/PictMCP.git
+cd PictMCP
 pnpm install
 pnpm build
 ```
@@ -33,10 +33,10 @@ In your MCP client
 ```json
 {
   "mcpServers": {
-      "pict-mcp": {
+      "PictMCP": {
           "command": "node",
           "args": [
-            "/ABSOLUTE/PATH/TO/PARENT/FOLDER/pict-mcp/dist/index.js"
+            "/ABSOLUTE/PATH/TO/PARENT/FOLDER/PictMCP/dist/index.js"
           ]
       }
   }

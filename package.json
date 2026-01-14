@@ -1,10 +1,24 @@
 {
-  "name": "pict-mcp",
+  "name": "pictmcp",
   "version": "0.1.0-preview",
-  "type": "module",
   "description": "Pairwise Independent Combinatorial Testings for MCP",
+  "keywords": [],
+  "homepage": "https://github.com/takeyaqa/PictMCP#readme",
+  "bugs": {
+    "url": "https://github.com/takeyaqa/PictMCP/issues"
+  },
+  "license": "MIT",
+  "author": "Takeshi Kishi",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
   "bin": {
-    "pict-mcp": "./dist/index.js"
+    "pictmcp": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takeyaqa/PictMCP.git"
   },
   "scripts": {
     "build": "tsc && chmod 755 dist/index.js",
@@ -14,13 +28,6 @@
     "format": "prettier --check .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "dist"
-  ],
-  "keywords": [],
-  "author": "Takeshi Kishi",
-  "license": "MIT",
-  "repository": "takeyaqa/pict-mcp",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
     "@takeyaqa/pict-wasm": "3.7.4-wasm.11",
@@ -34,5 +41,17 @@
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.1"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22 <23"
+    },
+    "packageManager": [
+      {
+        "name": "pnpm",
+        "version": ">=10 <11"
+      }
+    ]
   }
 }
