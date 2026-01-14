@@ -1,23 +1,16 @@
 import js from '@eslint/js'
+import globals from 'globals'
 import tseslint from 'typescript-eslint'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
-export default tseslint.config(
-  { ignores: ['dist'] },
+export default defineConfig([
+  globalIgnores(['dist']),
   {
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.strictTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-      eslintConfigPrettier,
-    ],
-    files: ['**/*.ts'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      parserOptions: {
-        project: ['./tsconfig.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    plugins: { js, tseslint },
+    extends: ['js/recommended', 'tseslint/strict', 'tseslint/stylistic'],
+    languageOptions: { globals: { ...globals.node } },
   },
-)
+  eslintConfigPrettier,
+])

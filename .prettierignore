@@ -1,5 +1,1 @@
-.devcontainer/
-.github/
-src/pict.mjs
 pnpm-lock.yaml
-README.md
