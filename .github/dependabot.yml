@@ -4,20 +4,26 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 1
+    open-pull-requests-limit: 10
     commit-message:
       prefix: "build"
       include: "scope"
+    groups:
+      eslint:
+        patterns:
+          - "@eslint/*"
+          - "eslint"
+          - "eslint-config-prettier"
+          - "typescript-eslint"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 1
+    open-pull-requests-limit: 10
     commit-message:
       prefix: "ci"
-      include: "scope"
-  - package-ecosystem: "devcontainers"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "chore"
       include: "scope"
