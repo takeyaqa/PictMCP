@@ -6,26 +6,20 @@ import { PictRunner } from '@takeyaqa/pict-wasm'
 // Create server instance
 const server = new McpServer({
   name: 'PictMCP',
-  description: 'Pairwise Independent Combinatorial Testings for MCP',
-  version: '0.1.0',
-  capabilities: {
-    resources: {},
-    tools: {},
-  },
+  version: '0.1.0-preview',
 })
 
 // Register pict tools
-server.tool(
-  'generates-test-cases',
-  'Generates test cases using pairwise combination algorithm',
+server.registerTool(
+  'generate-test-cases',
   {
-    parameters: z
-      .object({
-        name: z.string(),
-        values: z.string(),
-      })
-      .array()
-      .describe('Parameters for the test case generation'),
+    description: 'Generates test cases using pairwise combination algorithm',
+    inputSchema: {
+      parameters: z
+        .object({ name: z.string(), values: z.string() })
+        .array()
+        .describe('Parameters for the test case generation'),
+    },
   },
   async ({ parameters }) => {
     const pictRunner = new PictRunner()
@@ -55,9 +49,7 @@ async function main() {
   console.error('PictMCP Server running on stdio')
 }
 
-main().catch((error: unknown) => {
-  if (error instanceof Error) {
-    console.error('Fatal error in main():', error)
-  }
+main().catch((error) => {
+  console.error('Fatal error in main():', error)
   process.exit(1)
 })
