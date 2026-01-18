@@ -19,12 +19,16 @@ server.registerTool(
         .object({ name: z.string(), values: z.string() })
         .array()
         .describe("Parameters for the test case generation"),
+      constraints: z
+        .string()
+        .optional()
+        .describe("Constraints for the test case generation"),
     },
   },
-  async ({ parameters }) => {
+  async ({ parameters, constraints }) => {
     const pictRunner = new PictRunner();
     await pictRunner.init();
-    const output = pictRunner.run(parameters);
+    const output = pictRunner.run(parameters, { constraintsText: constraints });
     const formattedOutput = output.body.map((row) =>
       row.map((cell) => cell.trim()).join(", "),
     );
