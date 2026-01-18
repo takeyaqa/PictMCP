@@ -1,6 +1,7 @@
 {
   "name": "pictmcp",
-  "version": "0.1.0-preview",
+  "mcpName": "io.github.takeyaqa/PictMCP",
+  "version": "0.1.0",
   "description": "Pairwise Testing for the AI",
   "keywords": [],
   "homepage": "https://github.com/takeyaqa/PictMCP#readme",
