@@ -23,7 +23,7 @@ describe("PictMCP Server", () => {
     await server.close();
   });
 
-  it("should define correct version", async () => {
+  it("should return version matching package configuration", async () => {
     const serverVersion = client.getServerVersion();
 
     expect(serverVersion?.version).toBe(packageJson.version);
