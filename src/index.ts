@@ -47,6 +47,9 @@ server.registerTool(
   },
 );
 
+// export for testing purposes
+export { server };
+
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
