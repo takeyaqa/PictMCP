@@ -6,7 +6,7 @@ import { PictRunner } from "@takeyaqa/pict-wasm";
 // Create server instance
 const server = new McpServer({
   name: "PictMCP",
-  version: "0.1.0",
+  version: "0.2.0",
 });
 
 // Register pict tools
