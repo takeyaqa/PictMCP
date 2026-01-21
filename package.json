@@ -24,11 +24,13 @@
   "scripts": {
     "build": "tsc && chmod 755 dist/index.js",
     "clean": "rm -rf dist",
-    "typecheck": "tsc --noEmit",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
     "lint": "eslint .",
-    "format": "prettier --check .",
+    "lint:fix": "eslint --fix .",
+    "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "test:no-watch": "vitest run"
+    "test:run": "vitest run"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.25.2",
