@@ -14,7 +14,7 @@ Pairwise Independent Combinatorial Testings for MCP
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v22 or higher)
+- [Node.js](https://nodejs.org/) (v24 or higher)
 - [pnpm](https://pnpm.io/) (v10 or higher)
 
 ### Commands
