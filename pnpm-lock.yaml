@@ -21,6 +21,9 @@ importers:
       '@eslint/js':
         specifier: ^9.39.2
         version: 9.39.2
+      '@tsconfig/node-ts':
+        specifier: ^23.6.2
+        version: 23.6.2
       '@tsconfig/node24':
         specifier: ^24.0.4
         version: 24.0.4
@@ -423,6 +426,9 @@ packages:
 
   '@takeyaqa/pict-wasm@3.7.4-wasm.11':
     resolution: {integrity: sha512-k+U+UzmKnvYxSdJs9m+DddyQmLO+Fz8tzjaJvwDS4xDLJKsNXxzd1RneoZGye7Fx+PEnDZEXlckMBj2P7IF5cQ==}
+
+  '@tsconfig/node-ts@23.6.2':
+    resolution: {integrity: sha512-WcU3KR3tHB8XMotRBpUEGfPLT3W0gAhrHcTxU7mNQ4N1+fwF3LbjpWP07TuhZtN5ehK3bcK/R4Zzqp7Pqd7Nqg==}
 
   '@tsconfig/node24@24.0.4':
     resolution: {integrity: sha512-2A933l5P5oCbv6qSxHs7ckKwobs8BDAe9SJ/Xr2Hy+nDlwmLE1GhFh/g/vXGRZWgxBg9nX/5piDtHR9Dkw/XuA==}
@@ -1588,6 +1594,8 @@ snapshots:
   '@standard-schema/spec@1.1.0': {}
 
   '@takeyaqa/pict-wasm@3.7.4-wasm.11': {}
+
+  '@tsconfig/node-ts@23.6.2': {}
 
   '@tsconfig/node24@24.0.4': {}
 
