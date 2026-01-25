@@ -26,13 +26,14 @@ server.registerTool(
     },
   },
   async ({ parameters, constraints }) => {
-    const pictRunner = new PictRunner();
-    await pictRunner.init();
+    const pictRunner = await PictRunner.create();
     const output = pictRunner.run(parameters, { constraintsText: constraints });
-    const formattedOutput = output.body.map((row) =>
+    const formattedOutput = output.result.body.map((row) =>
       row.map((cell) => cell.trim()).join(", "),
     );
-    const formattedHeader = output.header.map((cell) => cell.trim()).join(", ");
+    const formattedHeader = output.result.header
+      .map((cell) => cell.trim())
+      .join(", ");
     const formattedBody = formattedOutput.join("\n");
     const formattedOutputText = `Header: ${formattedHeader}\nBody:\n${formattedBody}`;
 
