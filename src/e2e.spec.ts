@@ -75,7 +75,6 @@ describe("PictMCP Server", () => {
     });
 
     const content = response.content as TextContent[];
-    console.error(content);
     expect(content).toHaveLength(1);
     expect(content[0].type).toBe("text");
     expect(content[0].text).toContain("Header: OS, Browser, Resolution");
