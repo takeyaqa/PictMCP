@@ -4,9 +4,7 @@
     "@tsconfig/node-ts/tsconfig.json"
   ],
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist"
+    "noEmit": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.spec.ts"]
+  "include": ["src/**/*.ts"]
 }
