@@ -1,16 +1,30 @@
 import js from "@eslint/js";
-import globals from "globals";
 import tseslint from "typescript-eslint";
+import vitest from "@vitest/eslint-plugin";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
   globalIgnores(["dist"]),
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
+    files: ["src/**/*.{js,mjs,cjs,ts,mts,cts}"],
+    ignores: ["src/**/*.spec.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js, tseslint },
-    extends: ["js/recommended", "tseslint/strict", "tseslint/stylistic"],
-    languageOptions: { globals: { ...globals.node } },
+    extends: [
+      "js/recommended",
+      "tseslint/strictTypeChecked",
+      "tseslint/stylisticTypeChecked",
+    ],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+  },
+  {
+    files: ["src/**/*.spec.{js,mjs,cjs,ts,mts,cts}"],
+    plugins: { js, tseslint, vitest },
+    extends: ["js/recommended", "tseslint/recommended", "vitest/recommended"],
   },
   eslintConfigPrettier,
 ]);

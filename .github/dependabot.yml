@@ -18,6 +18,10 @@ updates:
           - "eslint-config-prettier"
           - "prettier"
           - "typescript-eslint"
+      vitest:
+        patterns:
+          - "@vitest/*"
+          - "vitest"
     ignore:
       - dependency-name: "@takeyaqa/pict-wasm"
   - package-ecosystem: "github-actions"

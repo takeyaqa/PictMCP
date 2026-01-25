@@ -56,7 +56,7 @@ async function main() {
   console.error("PictMCP Server running on stdio");
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error("Fatal error in main():", error);
   process.exit(1);
 });
