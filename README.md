@@ -1,7 +1,5 @@
 # PictMCP
 
-Pairwise Independent Combinatorial Testings for MCP
-
 ## 🚧 Work in Progress 🚧
 
 > [!WARNING]
@@ -9,6 +7,10 @@ Pairwise Independent Combinatorial Testings for MCP
 > It is not yet stable and its API and features may change without notice.
 >
 > Use in production environments is **not recommended** at this time.
+
+## Project overview
+
+PictMCP is an MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants. It wraps the PICT (Pairwise Independent Combinatorial Testing) algorithm via WebAssembly, enabling AI clients to generate optimized test case combinations.
 
 ## Install
 
@@ -19,23 +21,14 @@ Pairwise Independent Combinatorial Testings for MCP
 
 ### Commands
 
-In your terminal
-
-```sh
-git clone https://github.com/takeyaqa/PictMCP.git
-cd PictMCP
-pnpm install
-pnpm build
-```
-
 In your MCP client
 
 ```json
 {
   "mcpServers": {
     "PictMCP": {
-      "command": "node",
-      "args": ["/ABSOLUTE/PATH/TO/PARENT/FOLDER/PictMCP/dist/index.js"]
+      "command": "pnpx",
+      "args": ["pictmcp"]
     }
   }
 }

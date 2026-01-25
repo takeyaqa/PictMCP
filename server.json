@@ -1,7 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.takeyaqa/PictMCP",
-  "description": "Pairwise Testing for the AI",
+  "title": "PictMCP",
+  "description": "Provides pairwise combinatorial testing capabilities to AI assistants.",
   "repository": {
     "url": "https://github.com/takeyaqa/PictMCP",
     "source": "github"
