@@ -2,8 +2,19 @@
   "name": "pictmcp",
   "mcpName": "io.github.takeyaqa/PictMCP",
   "version": "0.2.0",
-  "description": "Pairwise Testing for the AI",
-  "keywords": [],
+  "description": "MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants.",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "ai",
+    "pict",
+    "testing",
+    "testing-tools",
+    "test-case-generation",
+    "combinatorial-testing",
+    "pairwise",
+    "pairwise-testing"
+  ],
   "homepage": "https://github.com/takeyaqa/PictMCP#readme",
   "bugs": {
     "url": "https://github.com/takeyaqa/PictMCP/issues"
@@ -49,6 +60,9 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.53.0",
     "vitest": "^4.0.17"
+  },
+  "engines": {
+    "node": ">=24"
   },
   "devEngines": {
     "runtime": {
