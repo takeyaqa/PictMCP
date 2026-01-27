@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
-import type { TextContent } from "@modelcontextprotocol/sdk/types.js";
 import packageJson from "../package.json" with { type: "json" };
 import serverJson from "../server.json" with { type: "json" };
 import { PictMCPServer } from "../dist/server.js";
+import { TextContent } from "@modelcontextprotocol/sdk/types.js";
 
 describe("PictMCP Server", () => {
   let server: PictMCPServer;
@@ -39,6 +39,10 @@ describe("PictMCP Server", () => {
 
     expect(tools).toHaveLength(1);
     expect(tools[0].name).toBe("generate-test-cases");
+    expect(tools[0].title).toBe("Generate test cases");
+    expect(tools[0].description).toBe(
+      "Executes PICT with the given parameters and options to generate test cases.",
+    );
   });
 
   it("should generate test cases using PICT", async () => {
@@ -53,12 +57,26 @@ describe("PictMCP Server", () => {
       },
     });
 
-    const content = response.content as TextContent[];
-    expect(content).toHaveLength(1);
-    expect(content[0].type).toBe("text");
-    expect(content[0].text).toContain("Header: OS, Browser, Resolution");
-    expect(content[0].text).toContain("Body:");
-    expect(content[0].text).toContain("Windows, Chrome, 1920x1080");
+    expect(response.structuredContent).toEqual({
+      result: {
+        header: ["OS", "Browser", "Resolution"],
+        body: [
+          ["macOS", "Edge", "1920x1080"],
+          ["Windows", "Edge", "1280x720"],
+          ["Windows", "Firefox", "1920x1080"],
+          ["Windows", "Chrome", "1920x1080"],
+          ["macOS", "Chrome", "1280x720"],
+          ["macOS", "Firefox", "1280x720"],
+        ],
+      },
+      modelFile: `OS: Windows, macOS
+Browser: Chrome, Firefox, Edge
+Resolution: 1920x1080, 1280x720`,
+      message: "",
+    });
+    const textContent = (response.content as Array<unknown>)[0] as TextContent;
+    expect(textContent.type).toEqual("text");
+    expect(JSON.parse(textContent.text)).toEqual(response.structuredContent);
   });
 
   it("should handle constraints in test case generation", async () => {
@@ -70,17 +88,33 @@ describe("PictMCP Server", () => {
           { name: "Browser", values: "Chrome, Firefox, Edge" },
           { name: "Resolution", values: "1920x1080, 1280x720" },
         ],
-        constraints: 'IF [OS] = "macOS" THEN [Browser] <> "Edge";',
+        constraintsText: 'IF [OS] = "macOS" THEN [Browser] <> "Edge";',
       },
     });
 
-    const content = response.content as TextContent[];
-    expect(content).toHaveLength(1);
-    expect(content[0].type).toBe("text");
-    expect(content[0].text).toContain("Header: OS, Browser, Resolution");
-    expect(content[0].text).toContain("Body:");
-    expect(content[0].text).toContain("Windows, Chrome, 1920x1080");
-    expect(content[0].text).toContain("macOS, Chrome, 1920x1080");
-    expect(content[0].text).not.toContain("macOS, Edge");
+    expect(response.structuredContent).toEqual({
+      result: {
+        header: ["OS", "Browser", "Resolution"],
+        body: [
+          ["Windows", "Edge", "1280x720"],
+          ["macOS", "Chrome", "1280x720"],
+          ["Windows", "Edge", "1920x1080"],
+          ["macOS", "Firefox", "1280x720"],
+          ["Windows", "Firefox", "1920x1080"],
+          ["Windows", "Chrome", "1920x1080"],
+          ["macOS", "Chrome", "1920x1080"],
+        ],
+      },
+      modelFile: `OS: Windows, macOS
+Browser: Chrome, Firefox, Edge
+Resolution: 1920x1080, 1280x720
+
+IF [OS] = "macOS" THEN [Browser] <> "Edge";`,
+      message: "",
+    });
+
+    const textContent = (response.content as Array<unknown>)[0] as TextContent;
+    expect(textContent.type).toEqual("text");
+    expect(JSON.parse(textContent.text)).toEqual(response.structuredContent);
   });
 });

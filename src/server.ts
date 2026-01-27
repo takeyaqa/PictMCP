@@ -16,38 +16,79 @@ export class PictMCPServer {
     this.server.registerTool(
       "generate-test-cases",
       {
+        title: "Generate test cases",
         description:
-          "Generates test cases using pairwise combination algorithm",
+          "Executes PICT with the given parameters and options to generate test cases.",
         inputSchema: {
           parameters: z
-            .object({ name: z.string(), values: z.string() })
+            .object({
+              name: z.string().describe("The name of the parameter."),
+              values: z
+                .string()
+                .describe(
+                  "A comma-separated string of possible values for this parameter.",
+                ),
+            })
             .array()
-            .describe("Parameters for the test case generation"),
-          constraints: z
+            .describe(
+              "Represents a parameter definition for PICT test case generation.",
+            ),
+          constraintsText: z
             .string()
             .optional()
-            .describe("Constraints for the test case generation"),
+            .describe(
+              "PICT constraint expressions to filter invalid combinations.",
+            ),
+        },
+        outputSchema: {
+          result: z
+            .object({
+              header: z
+                .string()
+                .array()
+                .describe(
+                  "An array of parameter names representing the column headers.",
+                ),
+              body: z
+                .string()
+                .array()
+                .array()
+                .describe(
+                  "A two-dimensional array where each inner array represents a test case, with values corresponding to the header columns.",
+                ),
+            })
+            .describe(
+              "Represents the parsed result of PICT test case generation.",
+            ),
+          modelFile: z
+            .string()
+            .describe(
+              "The complete model file content that was passed to PICT.",
+            ),
+          message: z
+            .string()
+            .optional()
+            .describe(
+              "Optional message output from PICT, typically containing information.",
+            ),
         },
       },
-      async ({ parameters, constraints }) => {
+      async ({ parameters, constraintsText }) => {
         const pictRunner = await PictRunner.create();
         const output = pictRunner.run(parameters, {
-          constraintsText: constraints,
+          constraintsText: constraintsText,
         });
-        const formattedOutput = output.result.body.map((row) =>
-          row.map((cell) => cell.trim()).join(", "),
-        );
-        const formattedHeader = output.result.header
-          .map((cell) => cell.trim())
-          .join(", ");
-        const formattedBody = formattedOutput.join("\n");
-        const formattedOutputText = `Header: ${formattedHeader}\nBody:\n${formattedBody}`;
 
         return {
+          structuredContent: {
+            result: output.result,
+            modelFile: output.modelFile,
+            message: output.message,
+          },
           content: [
             {
               type: "text",
-              text: formattedOutputText,
+              text: JSON.stringify(output),
             },
           ],
         };
