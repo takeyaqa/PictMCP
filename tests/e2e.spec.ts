@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
+import type { TextContent } from "@modelcontextprotocol/sdk/types.js";
 import packageJson from "../package.json" with { type: "json" };
 import serverJson from "../server.json" with { type: "json" };
 import { PictMCPServer } from "../dist/server.js";
-import { TextContent } from "@modelcontextprotocol/sdk/types.js";
 
 describe("PictMCP Server", () => {
   let server: PictMCPServer;
