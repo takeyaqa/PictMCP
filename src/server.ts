@@ -76,7 +76,7 @@ export class PictMCPServer {
       async ({ parameters, constraintsText }) => {
         const pictRunner = await PictRunner.create();
         const output = pictRunner.run(parameters, {
-          constraintsText: constraintsText,
+          constraintsText,
         });
 
         return {
