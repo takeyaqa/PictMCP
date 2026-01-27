@@ -22,7 +22,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["src/**/*.spec.{js,mjs,cjs,ts,mts,cts}"],
+    files: ["{src,tests}/**/*.spec.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js, tseslint, vitest },
     extends: ["js/recommended", "tseslint/recommended", "vitest/recommended"],
   },

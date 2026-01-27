@@ -4,7 +4,7 @@ import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import type { TextContent } from "@modelcontextprotocol/sdk/types.js";
 import packageJson from "../package.json" with { type: "json" };
 import serverJson from "../server.json" with { type: "json" };
-import { PictMCPServer } from "./server.js";
+import { PictMCPServer } from "../dist/server.js";
 
 describe("PictMCP Server", () => {
   let server: PictMCPServer;
