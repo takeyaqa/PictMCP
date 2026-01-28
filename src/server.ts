@@ -11,6 +11,18 @@ export class PictMCPServer {
     this.server = new McpServer({
       name: "PictMCP",
       version: "0.2.0",
+      icons: [
+        {
+          src: "https://raw.githubusercontent.com/takeyaqa/PictMCP/main/assets/PictMCP_icon@64x64.png",
+          mimeType: "image/png",
+          sizes: ["64x64"],
+        },
+        {
+          src: "https://raw.githubusercontent.com/takeyaqa/PictMCP/main/assets/PictMCP_icon.svg",
+          mimeType: "image/svg+xml",
+          sizes: ["any"],
+        },
+      ],
     });
     // Register pict tools
     this.server.registerTool(
