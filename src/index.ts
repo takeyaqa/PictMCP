@@ -10,7 +10,7 @@ async function main() {
 
 try {
   await main();
-} catch (error) {
+} catch (error: unknown) {
   console.error("Fatal error in main():", error);
   process.exit(1);
 }
