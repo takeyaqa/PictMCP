@@ -1,8 +1,8 @@
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { PictMCPServer } from "./server.js";
+import { PictMcpServer } from "./server.js";
 
 async function main() {
-  const server = new PictMCPServer();
+  const server = new PictMcpServer();
   const transport = new StdioServerTransport();
   await server.connect(transport);
   console.error("PictMCP Server running on stdio");
