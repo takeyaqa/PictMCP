@@ -1,14 +1,10 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import type { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
-import type { LoggingMessageNotification } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
 import { PictRunner } from "@takeyaqa/pict-wasm";
 
-export class PictMCPServer {
-  private server: McpServer;
-
+export class PictMcpServer extends McpServer {
   constructor() {
-    this.server = new McpServer({
+    super({
       name: "io.github.takeyaqa/PictMCP",
       title: "PictMCP",
       version: "0.2.0",
@@ -28,8 +24,9 @@ export class PictMCPServer {
         },
       ],
     });
+
     // Register pict tools
-    this.server.registerTool(
+    super.registerTool(
       "generate-test-cases",
       {
         title: "Generate test cases",
@@ -110,36 +107,5 @@ export class PictMCPServer {
         };
       },
     );
-  }
-
-  connect(transport: Transport): Promise<void> {
-    return this.server.connect(transport);
-  }
-
-  close(): Promise<void> {
-    return this.server.close();
-  }
-
-  isConnected(): boolean {
-    return this.server.isConnected();
-  }
-
-  sendLoggingMessage(
-    params: LoggingMessageNotification["params"],
-    sessionId?: string,
-  ): Promise<void> {
-    return this.server.sendLoggingMessage(params, sessionId);
-  }
-
-  sendResourceListChanged(): void {
-    this.server.sendResourceListChanged();
-  }
-
-  sendToolListChanged(): void {
-    this.server.sendToolListChanged();
-  }
-
-  sendPromptListChanged(): void {
-    this.server.sendPromptListChanged();
   }
 }
