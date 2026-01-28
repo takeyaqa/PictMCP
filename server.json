@@ -2,12 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.takeyaqa/PictMCP",
   "title": "PictMCP",
+  "version": "0.2.0",
   "description": "Provides pairwise combinatorial testing capabilities to AI assistants.",
+  "websiteUrl": "https://github.com/takeyaqa/PictMCP#readme",
   "repository": {
     "url": "https://github.com/takeyaqa/PictMCP",
     "source": "github"
   },
-  "version": "0.2.0",
   "icons": [
     {
       "src": "https://raw.githubusercontent.com/takeyaqa/PictMCP/main/assets/PictMCP_icon@64x64.png",

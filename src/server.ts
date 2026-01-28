@@ -9,8 +9,12 @@ export class PictMCPServer {
 
   constructor() {
     this.server = new McpServer({
-      name: "PictMCP",
+      name: "io.github.takeyaqa/PictMCP",
+      title: "PictMCP",
       version: "0.2.0",
+      description:
+        "Provides pairwise combinatorial testing capabilities to AI assistants.",
+      websiteUrl: "https://github.com/takeyaqa/PictMCP#readme",
       icons: [
         {
           src: "https://raw.githubusercontent.com/takeyaqa/PictMCP/main/assets/PictMCP_icon@64x64.png",
