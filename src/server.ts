@@ -7,7 +7,7 @@ export class PictMcpServer extends McpServer {
     super({
       name: "io.github.takeyaqa/PictMCP",
       title: "PictMCP",
-      version: "0.2.0",
+      version: "0.3.0",
       description:
         "Provides pairwise combinatorial testing capabilities to AI assistants.",
       websiteUrl: "https://github.com/takeyaqa/PictMCP#readme",
