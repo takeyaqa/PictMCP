@@ -4,17 +4,17 @@ import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import type { TextContent } from "@modelcontextprotocol/sdk/types.js";
 import packageJson from "../package.json" with { type: "json" };
 import serverJson from "../server.json" with { type: "json" };
-import { PictMCPServer } from "../dist/server.js";
+import { PictMcpServer } from "../dist/server.js";
 
-describe("PictMCP Server", () => {
-  let server: PictMCPServer;
+describe("PictMcpServer", () => {
+  let server: PictMcpServer;
   let client: Client;
 
   beforeEach(async () => {
     const [clientTransport, serverTransport] =
       InMemoryTransport.createLinkedPair();
 
-    server = new PictMCPServer();
+    server = new PictMcpServer();
     client = new Client({ name: "test-client", version: "1.0.0" });
 
     await server.connect(serverTransport);
