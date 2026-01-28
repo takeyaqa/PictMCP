@@ -1,7 +1,7 @@
 {
   "name": "pictmcp",
   "mcpName": "io.github.takeyaqa/PictMCP",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants.",
   "keywords": [
     "mcp",
