@@ -26,7 +26,7 @@ export class PictMcpServer extends McpServer {
     });
 
     // Register pict tools
-    super.registerTool(
+    this.registerTool(
       "generate-test-cases",
       {
         title: "Generate test cases",
