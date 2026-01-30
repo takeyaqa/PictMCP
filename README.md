@@ -14,12 +14,12 @@
 
 ## Overview
 
-PictMCP is a MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants. It wraps the [PICT (Pairwise Independent Combinatorial Testing)](https://github.com/microsoft/pict) algorithm via WebAssembly, enabling AI clients to generate optimized test case combinations.
+PictMCP is an MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants. It wraps the [PICT (Pairwise Independent Combinatorial Testing)](https://github.com/microsoft/pict) algorithm via WebAssembly, enabling AI clients to generate optimized test case combinations.
 
-### Why need this?
+### Why use this?
 
 - **LLMs struggle with strict algorithmic data processing** - Combinatorial test generation requires precise mathematical algorithms that LLMs cannot reliably execute
-- **Offload complex logic** - This tool handles the combinatorial logic that LLMs handle poorly, allowing them to focus on test design and interpretation
+- **Offload complex logic** - This tool manages the combinatorial logic that is difficult for LLMs, allowing them to focus on test design and interpretation
 
 ## Features
 
