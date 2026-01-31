@@ -1,7 +1,7 @@
 {
   "name": "pictmcp",
   "mcpName": "io.github.takeyaqa/PictMCP",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants.",
   "keywords": [
     "mcp",
@@ -44,22 +44,22 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.2",
+    "@modelcontextprotocol/sdk": "^1.25.3",
     "@takeyaqa/pict-wasm": "3.7.4-wasm.13",
-    "zod": "^4.3.5"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@tsconfig/node-ts": "^23.6.2",
     "@tsconfig/node24": "^24.0.4",
-    "@types/node": "^25.0.9",
+    "@types/node": "^25.1.0",
     "@vitest/eslint-plugin": "^1.6.6",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.8.0",
+    "prettier": "^3.8.1",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.54.0",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   },
   "engines": {
     "node": ">=24"
