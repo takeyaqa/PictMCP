@@ -7,8 +7,7 @@ import { defineConfig, globalIgnores } from "eslint/config";
 export default defineConfig([
   globalIgnores(["dist"]),
   {
-    files: ["src/**/*.{js,mjs,cjs,ts,mts,cts}"],
-    ignores: ["src/**/*.spec.{js,mjs,cjs,ts,mts,cts}"],
+    files: ["src/**/*.ts"],
     plugins: { js, tseslint },
     extends: [
       "js/recommended",
@@ -22,7 +21,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["{src,tests}/**/*.spec.{js,mjs,cjs,ts,mts,cts}"],
+    files: ["tests/**/*.spec.ts"],
     plugins: { js, tseslint, vitest },
     extends: ["js/recommended", "tseslint/recommended", "vitest/recommended"],
   },
