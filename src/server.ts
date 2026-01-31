@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { PictRunner } from "@takeyaqa/pict-wasm";
+import { PictError, PictRunner } from "@takeyaqa/pict-wasm";
 
 export function createPictMcpServer() {
   const server = new McpServer({
@@ -83,24 +83,40 @@ export function createPictMcpServer() {
       },
     },
     async ({ parameters, constraintsText }) => {
-      const pictRunner = await PictRunner.create();
-      const output = pictRunner.run(parameters, {
-        constraintsText,
-      });
+      try {
+        const pictRunner = await PictRunner.create();
+        const output = pictRunner.run(parameters, {
+          constraintsText,
+        });
 
-      return {
-        structuredContent: {
-          result: output.result,
-          modelFile: output.modelFile,
-          message: output.message,
-        },
-        content: [
-          {
-            type: "text",
-            text: JSON.stringify(output),
+        return {
+          structuredContent: {
+            result: output.result,
+            modelFile: output.modelFile,
+            message: output.message,
           },
-        ],
-      };
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(output),
+            },
+          ],
+        };
+      } catch (error: unknown) {
+        const errorMessage =
+          error instanceof PictError
+            ? error.message
+            : "An unexpected error occurred during test case generation.";
+        return {
+          content: [
+            {
+              type: "text",
+              text: errorMessage,
+            },
+          ],
+          isError: true,
+        };
+      }
     },
   );
   return server;

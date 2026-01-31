@@ -118,4 +118,22 @@ IF [OS] = "macOS" THEN [Browser] <> "Edge";`,
     expect(textContent.type).toEqual("text");
     expect(JSON.parse(textContent.text)).toEqual(response.structuredContent);
   });
+
+  it("should return error for invalid constraint syntax", async () => {
+    const response = await client.callTool({
+      name: "generate-test-cases",
+      arguments: {
+        parameters: [
+          { name: "OS", values: "Windows, macOS" },
+          { name: "Browser", values: "Chrome, Firefox" },
+        ],
+        constraintsText: 'IF [OS] = "Windows" THEN [Browser] <> ;',
+      },
+    });
+
+    expect(response.isError).toBe(true);
+    const textContent = (response.content as Array<unknown>)[0] as TextContent;
+    expect(textContent.type).toEqual("text");
+    expect(textContent.text).toContain("Input Error:");
+  });
 });
