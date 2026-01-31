@@ -4,15 +4,7 @@
   <img src="assets/PictMCP_logo.svg" alt="PictMCP Logo" width="400">
 </p>
 
-## 🚧 Work in Progress 🚧
-
-> [!WARNING]
-> This project is currently under active development.
-> It is not yet stable and its API and features may change without notice.
->
-> Use in production environments is **not recommended** at this time.
-
-## Overview
+## Pairwise Testing for the AI
 
 PictMCP is an MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants. It wraps the [PICT (Pairwise Independent Combinatorial Testing)](https://github.com/microsoft/pict) algorithm via WebAssembly, enabling AI clients to generate optimized test case combinations.
 
