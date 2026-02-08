@@ -4,7 +4,6 @@ on:
 
 env:
   PNPM_VERSION: 10
-  NODE_VERSION: 24
 
 jobs:
   formatcheck:
@@ -16,7 +15,7 @@ jobs:
           version: ${{ env.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: "package.json"
           cache: pnpm
       - run: pnpm install
       - run: pnpm run fmt:check
@@ -29,7 +28,7 @@ jobs:
           version: ${{ env.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: "package.json"
           cache: pnpm
       - run: pnpm install
       - run: pnpm run lint
@@ -42,11 +41,15 @@ jobs:
           version: ${{ env.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: "package.json"
           cache: pnpm
       - run: pnpm install
       - run: pnpm run typecheck
-  test:
+  build-and-test:
+    needs: [formatcheck, lint, typecheck]
+    strategy:
+      matrix:
+        node-version: [22, 24]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -55,7 +58,8 @@ jobs:
           version: ${{ env.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ matrix.node-version }}
           cache: pnpm
       - run: pnpm install
+      - run: pnpm run build
       - run: pnpm run test

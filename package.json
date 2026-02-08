@@ -51,7 +51,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@tsconfig/node-ts": "^23.6.2",
-    "@tsconfig/node24": "^24.0.4",
+    "@tsconfig/node22": "^22.0.5",
     "@types/node": "^25.1.0",
     "@vitest/eslint-plugin": "^1.6.6",
     "eslint": "^9.39.2",
@@ -62,17 +62,17 @@
     "vitest": "^4.0.18"
   },
   "engines": {
-    "node": ">=24"
+    "node": "^22 || ^24"
   },
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": ">=24 <25"
+      "version": "^22 || ^24"
     },
     "packageManager": [
       {
         "name": "pnpm",
-        "version": ">=10 <11"
+        "version": "^10"
       }
     ]
   }

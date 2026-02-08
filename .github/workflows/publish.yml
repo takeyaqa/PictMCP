@@ -6,7 +6,7 @@ on:
 
 env:
   PNPM_VERSION: 10
-  NODE_VERSION: 24
+  NODE_VERSION: 22
 
 permissions:
   id-token: write # Required for OIDC
