@@ -33,10 +33,12 @@ The server uses `@modelcontextprotocol/sdk` for MCP protocol handling and `@take
 
 ## Key Conventions
 
+- **Git Workflow**: Always create a new branch from `main` before starting any task
 - **Zod for schemas**: Tool input/output schemas use Zod v4 with `.describe()` for documentation
 - **Version sync**: `version` in `package.json`, `server.json`, and `src/server.ts` must match
 - **ES modules**: Project uses `"type": "module"` with `.js` extensions in imports
 - **Strict TypeScript** - `tseslint/strictTypeChecked` for source, `tseslint/recommended` for tests
 - **Prettier** for formatting
+- **Commit Messages**: Use Conventional Commits format (e.g., `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test:`, `ci:`)
 - **Before committing** - Always run `pnpm run fmt`, `pnpm run lint`, `pnpm run typecheck`, and `pnpm run test:run`
 - **Ignore `pnpm-lock.yaml`** - Always skip this file during code review and pull request creation
