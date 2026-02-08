@@ -45,7 +45,7 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm run typecheck
-  build-and-test:
+  test:
     needs: [formatcheck, lint, typecheck]
     strategy:
       matrix:
@@ -61,5 +61,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
       - run: pnpm install
-      - run: pnpm run build
       - run: pnpm run test
