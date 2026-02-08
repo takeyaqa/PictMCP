@@ -2,7 +2,7 @@
 
 ## Overview
 
-PictMCP is an MCP (Model Context Protocol) server that provides pairwise combinatorial testing via WebAssembly-compiled PICT. It exposes a `generate-test-cases` tool for AI assistants.
+PictMCP is an MCP (Model Context Protocol) server that provides pairwise combinatorial testing via WebAssembly-compiled PICT. It exposes a `generate-test-cases` tool for AI assistants. It uses [@takeyaqa/pict-wasm](https://github.com/takeyaqa/pict-wasm) to generate combinatorial test cases.
 
 ## Build and Test Commands
 
@@ -13,13 +13,13 @@ pnpm install
 # Compile TypeScript to dist/
 pnpm run build
 
-# Run all tests once
-pnpm run test:run
-
 # Lint and format
 pnpm run fmt
 pnpm run lint
 pnpm run typecheck
+
+# Run all tests once
+pnpm run test:run
 ```
 
 ## Architecture
