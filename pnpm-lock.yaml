@@ -23,7 +23,7 @@ importers:
         version: 9.39.2
       '@tsconfig/node-ts':
         specifier: ^23.6.2
-        version: 23.6.2
+        version: 23.6.3
       '@tsconfig/node22':
         specifier: ^22.0.5
         version: 22.0.5
@@ -428,8 +428,8 @@ packages:
     resolution: {integrity: sha512-tqhAYQeiSrs3x88ietl3YdU85MMqLWF+3wGquR0dhRYNyyMBni33zbi1awFwHGzGM1KnFlRenIzFuHvbuADMTg==}
     engines: {node: '>=22'}
 
-  '@tsconfig/node-ts@23.6.2':
-    resolution: {integrity: sha512-WcU3KR3tHB8XMotRBpUEGfPLT3W0gAhrHcTxU7mNQ4N1+fwF3LbjpWP07TuhZtN5ehK3bcK/R4Zzqp7Pqd7Nqg==}
+  '@tsconfig/node-ts@23.6.3':
+    resolution: {integrity: sha512-ZnYCOAKQwB90EFAbg8+i7J6UTw3QHuqUO5kYQeiYTs2ALUDL/ujJjR+Jk2FPwpQjKCzWkt+iIisd6+8pndBnzQ==}
 
   '@tsconfig/node22@22.0.5':
     resolution: {integrity: sha512-hLf2ld+sYN/BtOJjHUWOk568dvjFQkHnLNa6zce25GIH+vxKfvTgm3qpaH6ToF5tu/NN0IH66s+Bb5wElHrLcw==}
@@ -1596,7 +1596,7 @@ snapshots:
 
   '@takeyaqa/pict-wasm@3.7.4-wasm.13': {}
 
-  '@tsconfig/node-ts@23.6.2': {}
+  '@tsconfig/node-ts@23.6.3': {}
 
   '@tsconfig/node22@22.0.5': {}
 
