@@ -6,7 +6,6 @@ on:
 
 env:
   PNPM_VERSION: 10
-  NODE_VERSION: 24
 
 permissions:
   id-token: write # Required for OIDC
@@ -23,11 +22,9 @@ jobs:
           version: ${{ env.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: "package.json"
           cache: pnpm
           registry-url: https://registry.npmjs.org
-      - name: Update npm to latest version
-        run: npm install -g npm@latest
       - name: Install dependencies
         run: pnpm install
       - name: Build package
