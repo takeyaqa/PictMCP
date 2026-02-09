@@ -12,8 +12,8 @@ importers:
         specifier: ^1.25.3
         version: 1.26.0(zod@4.3.6)
       '@takeyaqa/pict-wasm':
-        specifier: 3.7.4-wasm.13
-        version: 3.7.4-wasm.13
+        specifier: 3.7.4-wasm.14
+        version: 3.7.4-wasm.14
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -424,9 +424,9 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@takeyaqa/pict-wasm@3.7.4-wasm.13':
-    resolution: {integrity: sha512-tqhAYQeiSrs3x88ietl3YdU85MMqLWF+3wGquR0dhRYNyyMBni33zbi1awFwHGzGM1KnFlRenIzFuHvbuADMTg==}
-    engines: {node: '>=22'}
+  '@takeyaqa/pict-wasm@3.7.4-wasm.14':
+    resolution: {integrity: sha512-CqpiIR35w5sIpLhLq6AcVerAZ7arDRAFHDr/XPT5t7Vv4zFtoLnqB9GvUQ3jqGr6bF9MGD7uEts76EFZEThhFQ==}
+    engines: {node: ^22 || ^24}
 
   '@tsconfig/node-ts@23.6.3':
     resolution: {integrity: sha512-ZnYCOAKQwB90EFAbg8+i7J6UTw3QHuqUO5kYQeiYTs2ALUDL/ujJjR+Jk2FPwpQjKCzWkt+iIisd6+8pndBnzQ==}
@@ -1598,7 +1598,7 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@takeyaqa/pict-wasm@3.7.4-wasm.13': {}
+  '@takeyaqa/pict-wasm@3.7.4-wasm.14': {}
 
   '@tsconfig/node-ts@23.6.3': {}
 
