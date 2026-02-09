@@ -4,14 +4,15 @@
   <img src="assets/PictMCP_logo.svg" alt="PictMCP Logo" width="400">
 </p>
 
-## Pairwise Testing for the AI
+## Pairwise testing for your AI assistant
 
-**PictMCP** is an MCP (Model Context Protocol) server that provides pairwise combinatorial testing capabilities to AI assistants.
+**PictMCP** is an MCP server for software developers who design test cases with AI assistants, providing **reliable, algorithm-correct pairwise test generation**.
 
 ### Why use this?
 
-- **LLMs struggle with strict algorithmic data processing** - Combinatorial test generation requires precise mathematical algorithms that LLMs cannot reliably execute
-- **Offload complex logic** - PictMCP handles the logic so your AI can focus on test design
+- AI is great at test design, but not at combinatorial math
+- Pairwise generation must be deterministic and correct
+- PictMCP separates thinking (AI) from calculation (PICT)
 
 Prefer a GUI? Check out **[PictRider](https://pictrider.takeyaqa.dev/)**.
 
@@ -133,3 +134,7 @@ PictMCP is provided "as is", without warranty of any kind. The authors are not l
 Generated test cases do _not guarantee complete coverage_ or _the absence of defects_. Please supplement pairwise testing with other strategies as appropriate.
 
 PictMCP is an independent project and is not affiliated with Microsoft Corporation.
+
+---
+
+If you find PictMCP useful, please consider starring the repository.
