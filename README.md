@@ -10,9 +10,9 @@
 
 ### Why use this?
 
-- AI is great at test design, but not at combinatorial math
-- Pairwise generation must be deterministic and correct
-- PictMCP separates thinking (AI) from calculation (PICT)
+- AI is great at test design, but not at combinatorial math.
+- Pairwise generation must be deterministic and correct.
+- PictMCP separates thinking (AI) from calculation (PICT).
 
 Prefer a GUI? Check out **[PictRider](https://pictrider.takeyaqa.dev/)**.
 
