@@ -26,8 +26,12 @@ updates:
           - "@vitest/*"
           - "vitest"
     ignore:
+      - dependency-name: "@eslint/js"
+        update-types: ["version-update:semver-major"]
       - dependency-name: "@takeyaqa/pict-wasm"
       - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "eslint"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
