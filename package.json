@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
-    "@takeyaqa/pict-wasm": "3.7.4-wasm.14",
+    "@takeyaqa/pict-wasm": "3.7.4-wasm.15",
     "zod": "^4.3.6"
   },
   "devDependencies": {

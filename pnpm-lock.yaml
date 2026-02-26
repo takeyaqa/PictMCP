@@ -12,8 +12,8 @@ importers:
         specifier: ^1.27.1
         version: 1.27.1(zod@4.3.6)
       '@takeyaqa/pict-wasm':
-        specifier: 3.7.4-wasm.14
-        version: 3.7.4-wasm.14
+        specifier: 3.7.4-wasm.15
+        version: 3.7.4-wasm.15
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -424,8 +424,8 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@takeyaqa/pict-wasm@3.7.4-wasm.14':
-    resolution: {integrity: sha512-CqpiIR35w5sIpLhLq6AcVerAZ7arDRAFHDr/XPT5t7Vv4zFtoLnqB9GvUQ3jqGr6bF9MGD7uEts76EFZEThhFQ==}
+  '@takeyaqa/pict-wasm@3.7.4-wasm.15':
+    resolution: {integrity: sha512-mJaOooFwd2CqisvoG12DE4Ld+3Vmw5Iyd0AevRlx+V/0uFehJe/EwzJzUXRG3JDQkl3wjNohfyd1yCp5ZU6g8w==}
     engines: {node: ^22 || ^24}
 
   '@tsconfig/node-ts@23.6.4':
@@ -1607,7 +1607,7 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@takeyaqa/pict-wasm@3.7.4-wasm.14': {}
+  '@takeyaqa/pict-wasm@3.7.4-wasm.15': {}
 
   '@tsconfig/node-ts@23.6.4': {}
 
