@@ -6,7 +6,7 @@ export function createPictMcpServer() {
   const server = new McpServer({
     name: "io.github.takeyaqa/PictMCP",
     title: "PictMCP",
-    version: "0.5.0",
+    version: "0.5.1",
     description:
       "Provides pairwise combinatorial testing capabilities to AI assistants.",
     websiteUrl: "https://github.com/takeyaqa/PictMCP#readme",
