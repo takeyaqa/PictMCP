@@ -28,7 +28,7 @@ importers:
         specifier: ^22.0.5
         version: 22.0.5
       '@types/node':
-        specifier: ^22.19.11
+        specifier: ^22.19.15
         version: 22.19.15
       '@vitest/eslint-plugin':
         specifier: ^1.6.9
